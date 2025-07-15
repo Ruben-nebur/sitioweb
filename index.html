@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>DeFit | Diego Gimeno</title> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content=""> <!--METAETIQUETAS  para hacer SEO... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!--Estilos bootstrap -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"> <!--Iconos vectoriales de facebook, tikotk... -->
+    <link rel="stylesheet" href="css/aos.css"><!--libreria que permite agregar animaciones al scrollear -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/tooplate-gymso-style.css">
+
+</head>
+
+<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+    <!-- 1º atributo para activar el ScrollSpy, resalta el menu cunado haces scroll -->
+    <!-- 2ºindica el elemento del menu que debe actualizarse cuando se hace scroll . 3º margen superior  -->
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <img src="images/logo.png" class="spinner" alt="Cargando...">
+    </div>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <!--nav: define un elemento de navegaion. Fija el navbar en la parte superior
+        al hacer scroll. Es una clase de bootstrap que hacen que el navbar se expanda en pantallas grandes lg y colapse en moviles  -->
+        <div class="container">
+            <!-- Container es una clase de bootstrap que da un ancho como maximo con margenes laterales automaticos para centrar el contenido -->
+            <img src="images/logo.png" alt="Logo del sitio" class="logo">
+            <!-- Muestra el logo, class para el css y javascript -->
+            <a class="navbar-brand" href="index.html">DeFit</a> <!--Nombre en el navbar y lo enlaza al index.html-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- boton que aparece en dispositivos pequeños -->
+                <span class="navbar-toggler-icon"></span> <!--boton hamburguesa -->
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- el id es un identificador unico, para que el boton del menu se refiera a este div.-->
+
+                <ul class="navbar-nav ml-lg-auto"> <!-- ul es una lista no ordenada, lo dems son clases de bootstrap -->
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link smoothScroll">Home</a>
+                        <!-- li= elementos de lista, a es un enlaces, nav link estilo para enlace del menu de bootstrap -->
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link smoothScroll">Sobre mi</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#planes" class="nav-link smoothScroll">Planes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#metodo" class="nav-link smoothScroll">Metodos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link smoothScroll">Contacto</a>
+                    </li>
+                </ul>
+
+                <ul class="social-icon ml-lg-3"> <!-- esto son los iconos a la derecha de la pagina web-->
+                    <li><a href="https://www.instagram.com/defit_club/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.tiktok.com/@defit_club" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO --> <!-- es la parte que mas se ve, el landing page
+      section es un contenedor semantico-->
+    <section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
+
+        <div class="bg-overlay"></div> <!-- capa visual superpuesta para dar efecto sobre una imagen de fondo-->
+
+        <div class="container"> <!-- proporciona margenes automaticos BOOTSTRAP-->
+            <div class="row"> <!-- clase BOOTSTRAP para organizar columnas con grilla-->
+
+                <div class="col-lg-8 col-md-10 mx-auto col-12">
+                    <div class="hero-text mt-5 text-center">
+
+                        <h6 data-aos="fade-up" data-aos-delay="300">¡Acompañado de un profesional!</h6>
+
+                        <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">LLEVA A TU CUERPO AL PROXIMO
+                            NIVEL!</h1>
+
+                        <a href="#planes" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">EMPIEZA
+                            YA</a>
+
+                        <a href="#about" class="btn custom-btn bordered mt-3" data-aos="fade-up"
+                            data-aos-delay="700">SABER MAS</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- Cierra columna, fila, contenedor, seccion-->
+    </section>
+
+
+    <!-- SOBRE MI -->
+    <section class="about section" id="about"> <!-- para el css -->
+        <div class="container">
+            <div class="row">
+
+                <div class="mt-lg-5 mb-lg-0 mb-4 col-lg-5 col-md-10 mx-auto col-12">
+                    <!-- organiza el contenido en columnas dependiendo del dispositivo-->
+                    <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Hola, Soy Diego Gimeno</h3>
+
+                    <p data-aos="fade-up" data-aos-delay="400">Soy estudiante de Ciencias de la Actividad Física y del
+                        Deporte. Soy un apasionado del deporte, en especial del futbol,
+                        boxeo y gimnasio. Ademas de un apasionado un gran entusiasta por el aprendizaje y el
+                        entrenamiento </p>
+                </div>
+                <div class="col-lg-1 d-none d-lg-block">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="ml-lg-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="700">
+                    <div class="team-thumb">
+                        <img src="images/diego.png" class="img-fluid" alt="Trainer">
+                        <div class="team-info d-flex flex-column">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCION DE IMAGENES DE LOS LOGOS QUE TIENE EXPERIENCIA-->
+    <section class="logotipos py-4" id="logotipos-exp">
+        <div class="container d-flex justify-content-around align-items-center flex-wrap">
+            <img src="images/usj-vector-2.png" alt="Universidad San Jorge" class="logo-empresa">
+            <img src="images/uteboBlanco.png" alt="Utebo FC" class="logos-img">
+            <img src="images/ayuntaBlanco.png" alt="Club de boxeo" class="logos-img">
+            <img src="images/boxeo.jpeg" alt="Empresa 1" class="logos-img">
+        </div>
+
+        </div>
+    </section>
+
+
+    <!-- PLANES -->
+    <section class="planes-section" id="planes">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h6 data-aos="fade-up">Alcanza tu maximo nivel</h6>
+                    <h1 data-aos="fade-up">Planes de Entrenamiento</h1>
+
+                    <hr class="hr">
+                </div>
+
+                <!-- plan gimnasio-->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="class-thumb">
+                        <img src="images/cartelGYM.jpg" class="entrenamiento" alt="Class">
+                        <h3 class="mb-1">GYM</h3>
+                        <p> Si quieres enfocarte en el gimnasio este es tu plan.</p>
+                    </div>
+                </div>
+
+                <!-- plan futbol -->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="class-thumb">
+                        <img src="images/CARTEL FUTBOLISTAS.png" class="entrenamiento" alt="Class">
+                        <h3 class="mb-1">FUTBOL</h3>
+                        <p>Si quieres enfocarte en el futbol y conseguir tu mejor forma fisica este es tu plan!</p>
+                    </div>
+                </div>
+
+                <!--plan de boxeo-->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="class-thumb">
+                        <img src="images/CARTEL PELEADORES .png" class="entrenamiento" alt="Class">
+                        <h3 class="mb-1">LUCHA</h3>
+                        <p>Si quieres mejorar tu nivel fisico y tecnico en el boxeo este es tu plan.</p>
+                    </div>
+                </div>
+    </section>
+    <hr class="linea-separadora">
+
+
+    <!-- SECCION INFORMATIVA-->
+    <section class="info-train" id="informativa">
+        <div class="container">
+            <div class="row text-center mb1">
+                <div class="col-12">
+                    <h6 data-aos="fade-up">SUPERA TUS LÍMITES</h6>
+                    <h1 data-aos="fade-up">INVIERTE EN TU SALUD. TRANSFORMA TU FISICO Y MENTE</h1>
+
+                    <hr class="hr">
+                </div>
+            </div>
+
+            <div class="row text-center" id="bloqueFotos">
+                <!-- Bloque 1 -->
+                <div class="col-lg-4 col-md-6 col-12 mb-5" data-aos="fade-up" data-aos-delay="600">
+                    <img src="images/equality.png" class="rocket" alt="equilibrio">
+                    <div class="titulos">
+                        <h3 class="titulo-info">PLAN DE ENTRENAMIENTO 100% PERSONALIZADO</h3>
+                        <p class="mt-3">Aprenderás qué rutina es mejor según tu cuerpo y estilo de vida.</p>
+                    </div>
+                </div>
+
+                <!-- Bloque 2 -->
+                <div class="col-lg-4 col-md-6 col-12 mb-5" data-aos="fade-up" data-aos-delay="600">
+                    <img src="images/brain-circuit.png" class="rocket" alt="mentalidad">
+                    <div class="titulos">
+                        <h3 class="titulo-info">CÓMO MANTENER LA MOTIVACIÓN PARA ENTRENAR</h3>
+                        <p class="mt-3">Gracias al feedback diario y mi disponibilidad 24/7, te ayudaré a mantener el
+                            foco.</p>
+                    </div>
+                </div>
+
+                <!-- Bloque 3 -->
+                <div class="col-lg-4 col-md-6 col-12 mb-5" data-aos="fade-up" data-aos-delay="600">
+                    <img src="images/rocket-lunch.png" class="rocket" alt="mentalidad">
+                    <div class="titulos">
+                        <h3 class="titulo-info">CONSIGUE TU MEJOR VERSIÓN</h3>
+                        <p class="mt-3">Quieres alcanzar tu mejor versión y no sabes cómo. Yo te ayudaré a conseguirlo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="linea-separadora">
+
+    <!--METODO DE TRABAJO-->
+    <section class="py-5" id="metodo">
+        <div class="container">
+            <h1 class="metodo-titulo" data-aos="fade-up">¿Cómo será tu entrenamiento personalizado online?</h1>
+            <!-- Parte 1: Imagen izquierda -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <img src="images/cartelGYM.jpg" class="img-metodos" alt="Parte 1">
+                </div>
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h2 class="titulo-metodos">1. EVALUACION INICIAL</h2>
+                    <p>Comenzamos con una evaluación completa para conocer tu estado físico actual, tus hábitos,
+                        objetivos y limitaciones. Esta fase es clave para diseñar un plan adaptado 100% a ti y asegurar
+                        progresos reales desde el primer día.</p>
+                </div>
+            </div>
+            <!-- Parte 2: Imagen derecha -->
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6 order-lg-2">
+                    <img src="images/CARTEL FUTBOLISTAS.png" class="img-metodos" alt="Parte 2">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                <h2 class="titulo-metodos"> 2. ENTRENAMIENTO PERSONALIZADO</h2>
+                    <p>Diseño un programa de entrenamiento único para ti, teniendo en cuenta tu nivel, disponibilidad y
+                        metas. Cada rutina está pensada para ser efectiva, segura y motivadora, ya sea que entrenes en
+                        casa, gimnasio o al aire libre.</p>
+                </div>
+            </div>
+            <!-- Parte 3: Imagen izquierda -->
+            <div class="row align-items-center" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <img src="images/CARTEL PELEADORES .png" class="img-metodos" alt="Parte 3">
+                </div>
+                <div class="col-lg-6 ">
+                    <h2 class="titulo-metodos">3. APOYO CONSTANTE Y SEGUIMIENTO DIARIO</h2>
+                    <p>Estaré disponible para ti todos los días, resolviendo dudas, ajustando el plan y motivándote en
+                        cada paso. El seguimiento continuo es lo que marca la diferencia: no entrenas solo, entrenamos
+                        juntos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="linea-separadora">
+
+    <!-- EVALUACION GRATUITA -->
+    <section id="evaluacion" class="evaluacion-section">
+        <div class="container-evaluacion">
+            <h1  data-aos="fade-up"> Consigue Evaluacion gratuita </h1>
+            <h6 data-aos="fade-up"> Evaluamos para despues adaptar exhaustivamente el plan de entrenamiento </h6>
+            <img data-aos="fade-up" src="images/internetEntrenador.jpg" alt="Evaluación Inicial" class="img-evaluacion">
+        </div>
+    </section>
+    
+    <!-- CONTACTO-->
+    <section id="contacto" class="contact-section">
+        <div data-aos="fade-up" class="container-contacto">
+            <div class="contacto-formulario" data-aos="fade-up">
+                <h1 >Ponte en contacto y empieza ya!</h1>
+                <form>
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="text" placeholder="Telefono" required>
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <textarea placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div  class="container" >
+            <div class="row">
+
+                <div class="ml-auto col-lg-4 col-md-5">
+                    <p class="copyright-text">Copyright &copy; DeFit</p>
+                </div>
+
+                <div class="d-flex justify-content-center mx-auto col-lg-5 col-md-7 col-12">
+                    <p class="mr-4">
+                        <i class="fa fa-envelope-o mr-1"></i>
+                        <a href="#">deFit@gmail.com</a>
+                    </p>
+
+                    <!-- poner instagram y tiktok-->
+                    <a href="https://www.instagram.com/TU_USUARIO" target="_blank" class="red-social ml-3">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@tucuenta" target="_blank" class="red-social ml-3">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+
+</html>

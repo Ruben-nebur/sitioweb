@@ -1,0 +1,881 @@
+/*----------------------------------
+
+DEFIT DEIGO GIMENO
+
+-------------------------------------*/
+
+@font-face {
+  font-family: 'Plain';
+  src: url('../fonts/Plain-Regular.woff2') format('woff2'),
+    url('../fonts/Plain-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  src: url('../fonts/Plain-Light.woff2') format('woff2'),
+    url('../fonts/Plain-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  src: url('../fonts/Plain-Bold.woff2') format('woff2'),
+    url('../fonts/Plain-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #d60000;
+  --white-color: #ffffff;
+  --dark-color: #171819;
+  --about-bg-color: #f9f9f9;
+
+  --gray-color: #c1b4b4;
+  --link-color: #404040;
+  --p-color: #ffffff;
+
+  --base-font-family: 'Plain', sans-serif;
+  --font-weight-bold: bold;
+  --font-weight-normal: normal;
+  --font-weight-light: 300;
+  --font-weight-thin: 100;
+
+  --h1-font-size: 48px;
+  --h2-font-size: 36px;
+  --h3-font-size: 28px;
+  --h4-font-size: 24px;
+  --h5-font-size: 22px;
+  --h6-font-size: 22px;
+  --p-font-size: 18px;
+  --base-font-size: 16px;
+  --menu-font-size: 14px;
+
+  --border-radius-large: 100%;
+  --border-radius-small: 2px;
+}
+
+
+body {
+  background: #171819;
+  font-family: var(--base-font-family);
+}
+
+
+/*---------------------------------------
+     TYPOGRAPHY              
+  -----------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-thin);
+  line-height: normal;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  color: var(--about-bg-color);
+  font-size: var(--h6-font-size);
+  line-height: inherit;
+  margin: 0;
+}
+
+p {
+  color: var(--about-bg-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-light);
+  line-height: 1.5em;
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+}
+
+.section {
+  padding: 7rem 0;
+}
+
+
+/* BUTTON */
+
+.custom-btn {
+  background: transparent;
+  border-radius: var(--border-radius-small);
+  padding: 14px 24px;
+  color: var(--white-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  color: var(--primary-color);
+}
+
+.custom-btn:focus {
+  box-shadow: white;
+}
+
+.custom-btn.bordered:hover,
+.custom-btn.bordered:focus,
+
+.custom-btn.bg-color:hover,
+.custom-btn.bg-color:focus {
+  background: var(--white-color);
+  border-color: transparent;
+  color: var(--primary-color);
+}
+
+.bordered {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.bg-color {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+
+/*---------------------------------------
+     PRELOADER               
+  -----------------------------------------*/
+/* ANIMACIÓN del giro */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Spinner que gira (aplicado a la imagen del logo) */
+.spinner {
+  width: 140px;
+  height: 140px;
+  animation: spin 1s linear infinite;
+}
+
+/* Contenedor del preloader (pantalla de carga) */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  /* fondo durante la carga */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  pointer-events: auto;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  /* no capturar eventos cuando es invisible */
+}
+
+/*---------------------------------------
+     GENERAL               
+  -----------------------------------------*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--link-color);
+  font-weight: normal;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--primary-color);
+  outline: none;
+  text-decoration: none;
+}
+
+
+/* BG OVERLAY */
+
+.bg-overlay {
+  background: var(--dark-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+
+
+/*---------------------------------------
+     MENU             
+  -----------------------------------------*/
+
+.navbar {
+  background: var(--dark-color);
+  padding: 1rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.navbar-brand {
+  color: var(--white-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+  padding-top: 0;
+  margin-left: 10px;
+}
+
+.nav-item .nav-link {
+  display: block;
+  color: var(--white-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-normal);
+  text-transform: uppercase;
+  padding: 2px 6px;
+}
+
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.navbar .social-icon li a {
+  color: var(--white-color);
+}
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  width: 30px;
+  height: 35px;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background: var(--primary-color);
+  transition: background 10ms 300ms ease;
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+  transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: var(--primary-color);
+  width: 30px;
+  height: 2px;
+  content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  top: 8px;
+}
+
+.social-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.social-icon-img:hover {
+  filter: brightness(0) saturate(100%) sepia(100%) hue-rotate(-20deg) brightness(1.1) contrast(1.2);
+}
+
+.navbar-nav .nav-link {
+  transition: color 0.3s ease;
+}
+
+.navbar.navbar-shrink {
+  padding: 0.5rem 1rem;
+  /* Reduce altura del navbar */
+  transition: padding 0.3s ease;
+}
+
+.navbar-shrink .navbar-brand {
+  font-size: 20px;
+  /* Reduce tamaño del texto "DeFit" */
+  transition: font-size 0.3s ease;
+}
+
+.navbar-shrink .logo {
+  width: 80px;
+  /* Reduce el tamaño del logo */
+  transition: width 0.3s ease;
+}
+
+.navbar-shrink {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*---------------------------------------
+     LANDING              
+  -----------------------------------------*/
+
+.hero {
+  background-image: url('../images/fondo1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  min-height: 100vh;
+  position: relative;
+}
+
+/*---------------------------------------
+     LOGO              
+  -----------------------------------------*/
+.logo {
+  width: 120px;
+  /* Tamaño del logo (ajustable) */
+  height: auto;
+  /* Mantiene proporción original */
+  display: block;
+  margin-left: 10px;
+  padding-left: 0;
+  margin-right: 20px;
+}
+
+
+/*--------------------------------------
+      SOBRE MI 
+  -----------------------------------------*/
+#about p {
+  text-align: justify;
+}
+
+.about {
+  background: var(--dark-color);
+  color: #ffffff;
+}
+
+.img-fluid {
+  width: 250px;
+  /* ajusta al tamaño deseado */
+  height: 250px;
+  object-fit: cover;
+  /* asegura que la imagen se recorte bien */
+  border-radius: 50%;
+  /* hace que sea circular */
+  border: 2px solid rgb(0, 0, 0);
+  /* borde negro fino */
+  background-color: white;
+  /* fondo blanco por si la imagen tiene transparencia */
+  display: block;
+  margin: 0 auto;
+  /* centra la imagen horizontalmente */
+  box-shadow: 0 4px 20px rgb(179, 168, 168);
+}
+
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  background-color: red;
+  margin: 0 auto;
+}
+
+
+/*---------------------------------------
+      LOGOTIPOS FRANJA ROJA       
+-----------------------------------------*/
+
+#logotipos-exp {
+  background-color: #6b1010;
+  /* Rojo fuerte */
+}
+
+.logo-empresa {
+  max-height: 60px;
+  margin: 10px 20px;
+  filter: brightness(0) invert(1);
+  /* Opcional: pone los logos en blanco si son negros */
+}
+
+.logos-img {
+  max-height: 60px;
+  margin: 10px 20px;
+}
+
+
+
+/*---------------------------------------
+      PLANES ENTRENAMIENTO       
+-----------------------------------------*/
+
+
+.planes-section {
+  margin-bottom: 75px;
+  margin-top: 75px;
+}
+
+.entrenamiento {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgb(179, 168, 168);
+  margin-bottom: 15px;
+}
+
+#planes h3 {
+  color: #f9f9f9;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#planes p {
+  text-align: center;
+
+}
+
+
+
+
+/*---------------------------------------
+    INFORMACION - DEFIT
+-----------------------------------------*/
+#informativa {
+  color: #f9f9f9;
+  line-height: normal;
+}
+
+.rocket {
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.linea-separadora {
+  border: none;
+  border-top: 1px solid red;
+  /* Línea roja */
+  margin: 40px 0;
+  /* Espacio arriba y abajo */
+  width: 100%;
+  /* O ajústalo a lo que necesites */
+
+}
+
+/* -------------------------------------
+    METODO DE TRABAJO DEFIT
+---------------------------------------- */
+.img-metodos {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgb(179, 168, 168);
+}
+
+#metodo {
+  background-color: #171819;
+}
+
+#metodo p {
+  color: #f9f9f9;
+  text-align: justify;
+}
+
+#metodo h3 {
+  color: #f9f9f9;
+  text-align: justify;
+  flex-wrap: wrap;
+}
+
+.paso-numero {
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 25px;
+}
+
+.titulo-metodos {
+  color: #f9f9f9;
+}
+
+
+
+/*---------------------------------------
+     EVALUACION GRATUITA              
+-----------------------------------------*/
+
+.container-evaluacion {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#evaluacion h1 {
+  color: #f9f9f9;
+}
+
+#evaluacion h6 {
+  color: #f9f9f9;
+  text-align: center;
+}
+
+/*---------------------------------------
+     CONTACTO              
+-----------------------------------------*/
+.contact-section {
+  background-color: #171819;
+  padding: 60px 20px;
+
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 25px;
+
+}
+
+.container-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-texto {
+  flex: 1 1 400px;
+  text-align: left;
+  color: white;
+  margin-left: 0px;
+}
+
+.contacto-texto h1 {
+  font-size: auto;
+  color: white;
+}
+
+.contacto-texto h3 {
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+.contacto-texto p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.img-evaluacion {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.contacto-formulario {
+  flex: 1 1 400px;
+}
+
+.contacto-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.contacto-formulario button {
+  background-color: #6b1010;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contacto-formulario button:hover {
+  background-color: #a21414;
+}
+
+
+/*---------------------------------------
+     FOOTER              
+  -----------------------------------------*/
+
+.site-footer {
+  border-top: 1px solid #efebeb;
+  padding: 3rem 0;
+}
+
+.site-footer a {
+  color: var(--p-color);
+  font-weight: var(--font-weight-light);
+}
+
+.site-footer p {
+  font-size: var(--base-font-size);
+}
+
+.contact .fa,
+.site-footer .fa {
+  color: var(--primary-color);
+}
+
+
+/*---------------------------------------
+     SOCIAL ICON              
+  -----------------------------------------*/
+
+.social-icon {
+  position: relative;
+  padding: 0;
+  margin: 5px 0 0 0;
+}
+
+.social-icon li {
+  display: inline-block;
+  list-style: none;
+}
+
+.social-icon li a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-bold);
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.social-icon li a:hover {
+  color: var(--primary-color);
+}
+
+
+/*---------------------------------------
+     RESPONSIVE STYLES              
+  -----------------------------------------*/
+
+@media screen and (max-width: 992px) {
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .nav-item .nav-link {
+    padding: 6px;
+  }
+
+  .navbar .social-icon {
+    margin-top: 22px;
+  }
+
+  .navbar-collapse,
+  .site-footer {
+    text-align: center;
+  }
+
+  .schedule-table {
+    display: block;
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 26px;
+
+  }
+
+  p {
+    max-width: 85%;
+    /* El texto no ocupará todo el ancho */
+    margin: 0 auto;
+    /* Centrado horizontalmente */
+    text-align: center;
+    /* Centrado el contenido del párrafo */
+    font-size: 16px;
+    /* Tamaño adecuado para móviles */
+    line-height: 1.6;
+    /* Mejora la lectura */
+  }
+
+
+  #metodo h2 {
+    margin-top: 20px;
+    color: #f9f9f9;
+    text-align: center;
+  }
+
+  .entrenamiento {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgb(179, 168, 168);
+    margin-bottom: 15px;
+  }
+  
+  .about h3,
+  .about p {
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    max-width: 85%;
+    /* Ocupa el 100% del ancho disponible dentro de su contenedor */
+    margin: 0 auto;
+    /* Elimina márgenes desalineados */
+  }
+
+
+  #planes p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .metodo h2,
+  .metodo p {
+    text-align: center;
+    /* Alinea el texto a la izquierda */
+
+  }
+  #about {
+    padding: 2rem 0;  /* Reduce el espacio vertical solo en móviles */
+  }
+
+  #about .col-lg-5 {
+    margin-top: 0 !important; /* Elimina el margen superior solo en móviles */
+  }
+ #planes {
+    padding: 2rem 0;  /* Reduce el espacio arriba y abajo en móviles */
+  }
+
+  #planes .mb-5 {
+    margin-bottom: 2rem !important;  /* Reduce el margen inferior del título */
+  }
+}
